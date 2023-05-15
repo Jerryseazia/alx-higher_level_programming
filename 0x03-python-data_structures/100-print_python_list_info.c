@@ -1,21 +1,10 @@
-#include <Python>
-/**
- * print_python_list_info - function of the prototype
- * @p: PyObject
- * Return: void
- */
-
+#include "listobject.h"
+#include "object.h"
 void print_python_list_info(PyObject *p)
 {
-Py_ssize_t size, alloc, idx;
-size = PyList_Size(p);
-alloc = ((PyListObject *)p)->allocated;
-printf("[*] Size of the Python List = %ld\n", size);
-printf("[*] Allocated = %ld\n", alloc);
-for (idx = 0; idx < size; idx++)
-{
-printf("Element %ld: %s\n",
-idx,
-(PY_TYPE(PyList_GetItem(p, idx)))->tp_name);
-}
+	int i, l;
+
+	l = PyList_Size(p)
+	for (i = 0 ; i < l ; i++)
+		printf("[*] Size of the Python List = %d", l);
 }
